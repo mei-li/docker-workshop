@@ -1,0 +1,17 @@
+# stage 1
+FROM busybox as base
+RUN echo "start stage 1"
+COPY /hello /
+RUN cat /hello
+
+# stage 2
+FROM alpine as middle
+RUN echo "start stage 2"
+RUN echo "hello lola ,,,,,new" > /tmp/lola.txt
+
+# stage 3
+FROM base
+RUN echo "start stage 3"
+COPY --from=middle /tmp/lola.txt /lola.txt
+CMD ["cat lola.txt"]
+

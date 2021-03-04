@@ -1,0 +1,8 @@
+FROM busybox as base
+RUN wget http://www.google.com/
+COPY /hello /
+RUN ls /hello
+RUN ls
+RUN cat /hello
+CMD ["cat", "/hello"]
+

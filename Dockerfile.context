@@ -1,0 +1,3 @@
+FROM busybox
+COPY . /tmp/build/
+RUN du -sh /tmp/build/*

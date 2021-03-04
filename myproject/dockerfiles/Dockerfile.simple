@@ -1,0 +1,7 @@
+FROM busybox as base
+COPY /hello /
+RUN cat /hello
+RUN ls
+RUN pwd
+CMD ["cat", "/hello"]
+

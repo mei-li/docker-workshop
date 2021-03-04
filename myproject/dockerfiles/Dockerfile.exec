@@ -1,0 +1,6 @@
+FROM busybox
+COPY /hello /
+CMD ["sleep", "infinity"]
+
+# the command below is not valid
+# RUN cat /lola

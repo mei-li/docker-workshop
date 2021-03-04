@@ -1,0 +1,6 @@
+FROM busybox as base
+RUN echo "building image"
+COPY /hello /
+RUN cat /hello
+RUN cp /hello /hello2
+RUN ls
